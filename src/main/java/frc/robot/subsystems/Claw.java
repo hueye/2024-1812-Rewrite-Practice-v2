@@ -29,7 +29,7 @@ public class Claw extends SubsystemBase {
   }
 
   public void toggleClaw() {
-    if (clawPiston.get() == Value.kForward) {
+    if (clawPiston.get().equals(Value.kForward)) {
       
       clawPiston.set(Value.kReverse);
     

@@ -27,7 +27,7 @@ public class Arm extends SubsystemBase {
   }
 
   public void toggleArm() {
-    if (armPiston.get() == Value.kForward) {
+    if (armPiston.get().equals(Value.kForward)) {
       
       armPiston.set(Value.kReverse);
     
