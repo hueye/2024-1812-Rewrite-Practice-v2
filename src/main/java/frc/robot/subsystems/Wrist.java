@@ -26,11 +26,12 @@ public class Wrist extends SubsystemBase {
   public Wrist() {
     wristMotor = new CANSparkMax(WristConstants.wristMotorID, MotorType.kBrushless);
     wristMotor.setIdleMode(IdleMode.kBrake);
-    wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
-    wristMotor.burnFlash();
 
+    wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
+    wristEncoder.setInverted(true);
     wristEncoder.setPositionConversionFactor(WristConstants.wristAngleAllowance);
-    
+   
+    wristMotor.getPIDController();
     controller.setP(WristConstants.wristP);
     controller.setI(WristConstants.wristI);
     controller.setD(WristConstants.wristD);
@@ -39,6 +40,8 @@ public class Wrist extends SubsystemBase {
     controller.setOutputRange(WristConstants.wristOutputMin, WristConstants.wristOutputMax);
     controller.setReference(0, ControlType.kDutyCycle);
     //initially wrist starts at 0 degrees
+
+    wristMotor.burnFlash();
   }
 
   public void wristSetAngle(double desiredAngle) {

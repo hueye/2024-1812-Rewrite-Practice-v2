@@ -9,9 +9,7 @@ import frc.robot.Constants.WristConstants;
 import frc.robot.subsystems.Wrist;
 
 public class WristPlaceMidCMD extends Command {
-
   Wrist wrist;
-
   /** Creates a new WristPlaceShelf. */
   public WristPlaceMidCMD(Wrist wrist) {
     this.wrist = wrist;

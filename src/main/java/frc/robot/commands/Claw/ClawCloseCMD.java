@@ -10,7 +10,6 @@ import frc.robot.subsystems.Claw;
 
 public class ClawCloseCMD extends Command {
   Claw claw;
-
   /** Creates a new ClawCloseCMD. */
   public ClawCloseCMD(Claw claw) {
     this.claw = claw;

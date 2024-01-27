@@ -10,11 +10,9 @@ import frc.robot.subsystems.Arm;
 
 public class ArmUpCMD extends Command {
   Arm arm;
-  
   /** Creates a new ArmUpCMD. */
   public ArmUpCMD(Arm arm) {
     this.arm = arm;
-
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(arm);
   }

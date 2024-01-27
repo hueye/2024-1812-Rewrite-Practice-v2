@@ -9,9 +9,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Claw;
 
 public class ClawOpenCMD extends Command {
-
   Claw claw;
-
   /** Creates a new ClawOpenCMD. */
   public ClawOpenCMD(Claw claw) {
     this.claw = claw;

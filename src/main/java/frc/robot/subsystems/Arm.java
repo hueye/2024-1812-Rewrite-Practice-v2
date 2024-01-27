@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ArmConstants;
 
 public class Arm extends SubsystemBase {
-
+  
   DoubleSolenoid armPiston;
 
   /** Creates a new Arm. */

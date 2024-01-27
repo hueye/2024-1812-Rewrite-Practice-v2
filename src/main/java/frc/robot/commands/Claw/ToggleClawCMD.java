@@ -9,7 +9,6 @@ import frc.robot.subsystems.Claw;
 
 public class ToggleClawCMD extends Command {
   Claw claw;
-  
   /** Creates a new ToggleClawCMD. */
   public ToggleClawCMD(Claw claw) {
     this.claw = claw;
