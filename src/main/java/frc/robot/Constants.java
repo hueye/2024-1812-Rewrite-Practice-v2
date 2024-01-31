@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import com.revrobotics.CANSparkBase.IdleMode;
+
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
@@ -66,7 +68,6 @@ public final class Constants {
   
   public static final boolean GYRO_REVERSED = false;
   
-  
   }
   
   public static final class NeoMotorConstants {
@@ -113,8 +114,8 @@ public final class Constants {
       public static final double TURN_MIN_OUTPUT = -1;
       public static final double TURN_MAX_OUTPUT = 1;
   
-      //public static final IdleMode DRIVE_MOTOR_IDLE_MODE = IdleMode.kBrake;
-      //public static final IdleMode TURN_MOTOR_IDLE_MODE = IdleMode.kBrake;
+      public static final IdleMode DRIVE_MOTOR_IDLE_MODE = IdleMode.kBrake;
+      public static final IdleMode TURN_MOTOR_IDLE_MODE = IdleMode.kBrake;
   
       public static final int DRIVE_MOTOR_CURRENT_LIMIT = 50; // amps
       public static final int TURN_MOTOR_CURRENT_LIMIT = 20; // amps

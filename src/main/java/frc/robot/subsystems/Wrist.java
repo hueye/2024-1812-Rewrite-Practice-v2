@@ -25,9 +25,10 @@ public class Wrist extends SubsystemBase {
   /** Creates a new Wrist. */
   public Wrist() {
     wristMotor = new CANSparkMax(WristConstants.wristMotorID, MotorType.kBrushless);
+    wristMotor.restoreFactoryDefaults();
+    wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
     wristMotor.setIdleMode(IdleMode.kBrake);
 
-    wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
     wristEncoder.setInverted(true);
     wristEncoder.setPositionConversionFactor(WristConstants.wristAngleAllowance);
    
