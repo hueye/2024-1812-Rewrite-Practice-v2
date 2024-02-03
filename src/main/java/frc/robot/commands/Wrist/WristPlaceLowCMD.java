@@ -10,9 +10,11 @@ import frc.robot.subsystems.Wrist;
 
 public class WristPlaceLowCMD extends Command {
   Wrist wrist;
+
   /** Creates a new WristPlaceLowCMD. */
   public WristPlaceLowCMD(Wrist wrist) {
     this.wrist = wrist;
+
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(wrist);
   }

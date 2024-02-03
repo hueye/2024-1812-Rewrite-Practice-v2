@@ -7,9 +7,9 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Arm.ToggleArmCMD;
 import frc.robot.commands.Claw.ToggleClawCMD;
-import frc.robot.commands.Wrist.WristPlaceHighCMD;
-import frc.robot.commands.Wrist.WristPlaceLowCMD;
-import frc.robot.commands.Wrist.WristPlaceMidCMD;
+import frc.robot.commands.PlacementCMDs.PlaceHigh;
+import frc.robot.commands.PlacementCMDs.PlaceLow;
+import frc.robot.commands.PlacementCMDs.PlaceMid;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.Wrist;
@@ -59,9 +59,9 @@ public class RobotContainer {
     opController.b().whileTrue(new ToggleClawCMD(clawSub));
     opController.a().whileTrue(new ToggleArmCMD(armSub));
 
-    opController.povDown().whileTrue(new WristPlaceLowCMD(wristSub));
-    opController.povCenter().whileTrue(new WristPlaceMidCMD(wristSub));
-    opController.povUp().whileTrue(new WristPlaceHighCMD(wristSub));
+    opController.povDown().whileTrue(new PlaceLow(wristSub, armSub, clawSub));
+    opController.povCenter().whileTrue(new PlaceMid(wristSub, armSub, clawSub));
+    opController.povUp().whileTrue(new PlaceHigh(wristSub, armSub, clawSub));
 
   }
 
