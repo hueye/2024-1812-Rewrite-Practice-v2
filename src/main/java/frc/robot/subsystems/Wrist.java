@@ -26,13 +26,13 @@ public class Wrist extends SubsystemBase {
   public Wrist() {
     wristMotor = new CANSparkMax(WristConstants.wristMotorID, MotorType.kBrushless);
     wristMotor.restoreFactoryDefaults();
-    wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
     wristMotor.setIdleMode(IdleMode.kBrake);
 
+    wristEncoder = wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
     wristEncoder.setInverted(true);
     wristEncoder.setPositionConversionFactor(WristConstants.wristAngleAllowance);
    
-    wristMotor.getPIDController();
+    controller = wristMotor.getPIDController();
     controller.setP(WristConstants.wristP);
     controller.setI(WristConstants.wristI);
     controller.setD(WristConstants.wristD);

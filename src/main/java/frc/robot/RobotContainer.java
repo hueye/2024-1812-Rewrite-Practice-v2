@@ -7,9 +7,9 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Arm.ToggleArmCMD;
 import frc.robot.commands.Claw.ToggleClawCMD;
-import frc.robot.commands.PlacementCMDs.PlaceHigh;
-import frc.robot.commands.PlacementCMDs.PlaceLow;
-import frc.robot.commands.PlacementCMDs.PlaceMid;
+import frc.robot.commands.MultisystemCMDs.PlaceHigh;
+import frc.robot.commands.MultisystemCMDs.PlaceLow;
+import frc.robot.commands.MultisystemCMDs.PlaceMid;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.Wrist;
@@ -25,9 +25,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public Arm armSub = new Arm();
-  public Claw clawSub = new Claw();
-  public Wrist wristSub = new Wrist();
+  public static Arm armSub = new Arm();
+  public static Claw clawSub = new Claw();
+  public static Wrist wristSub = new Wrist();
   
 
   // Replace with CommandPS4Controller or CommandJoystick if needed

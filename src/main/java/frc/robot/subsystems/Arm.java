@@ -26,6 +26,10 @@ public class Arm extends SubsystemBase {
     armPiston.get();
   }
 
+  public Value armGet() {
+    return armPiston.get();
+  }
+
   public void toggleArm() {
     if (armPiston.get().equals(Value.kForward)) {
       
