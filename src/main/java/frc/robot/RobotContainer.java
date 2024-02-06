@@ -5,6 +5,7 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
+import frc.robot.commands.CompressCMD;
 import frc.robot.commands.Arm.ToggleArmCMD;
 import frc.robot.commands.Claw.ToggleClawCMD;
 import frc.robot.commands.MultisystemCMDs.PlaceHigh;
@@ -12,6 +13,7 @@ import frc.robot.commands.MultisystemCMDs.PlaceLow;
 import frc.robot.commands.MultisystemCMDs.PlaceMid;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Claw;
+import frc.robot.subsystems.Compress;
 import frc.robot.subsystems.Wrist;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -28,6 +30,7 @@ public class RobotContainer {
   public static Arm armSub = new Arm();
   public static Claw clawSub = new Claw();
   public static Wrist wristSub = new Wrist();
+  public static Compress compSub = new Compress();
   
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
@@ -38,6 +41,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+    compSub.setDefaultCommand(new CompressCMD(compSub));
   }
 
   /**
@@ -56,6 +60,7 @@ public class RobotContainer {
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
+
     opController.b().whileTrue(new ToggleClawCMD(clawSub));
     opController.a().whileTrue(new ToggleArmCMD(armSub));
 
