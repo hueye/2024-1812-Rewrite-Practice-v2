@@ -26,6 +26,7 @@ public class Claw extends SubsystemBase {
     clawPiston.set(value);
     clawPiston.get();
 
+    
   }
 
   public void toggleClaw() {

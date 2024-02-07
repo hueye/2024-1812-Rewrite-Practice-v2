@@ -4,13 +4,10 @@
 
 package frc.robot.commands.MultisystemCMDs;
 
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.RobotContainer;
 import frc.robot.Constants.ArmConstants;
-import frc.robot.Constants.ClawConstants;
 import frc.robot.commands.Arm.ArmDownCMD;
-import frc.robot.commands.Claw.ClawCloseCMD;
-import frc.robot.commands.Claw.ClawOpenCMD;
 import frc.robot.commands.Wrist.WristPlaceLowCMD;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.Claw;
@@ -32,7 +29,7 @@ public class PlaceLow extends SequentialCommandGroup {
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
       new ArmDownCMD(arm),
-      wrist.wait(ArmConstants.armDownSeconds),
+      Commands.waitSeconds(ArmConstants.armDownSeconds),
       new WristPlaceLowCMD(wrist)
     );
   }

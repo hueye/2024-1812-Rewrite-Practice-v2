@@ -5,9 +5,9 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.CompressCMD;
 import frc.robot.commands.Arm.ToggleArmCMD;
 import frc.robot.commands.Claw.ToggleClawCMD;
+import frc.robot.commands.Compressor.CompressCMD;
 import frc.robot.commands.MultisystemCMDs.PlaceHigh;
 import frc.robot.commands.MultisystemCMDs.PlaceLow;
 import frc.robot.commands.MultisystemCMDs.PlaceMid;
