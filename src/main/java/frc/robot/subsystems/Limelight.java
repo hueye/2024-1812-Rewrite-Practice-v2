@@ -22,6 +22,9 @@ public class Limelight extends SubsystemBase {
   public boolean tv;
   public double ta;
 
+  public static double currentPipeline;
+
+
   public double limePipeline = 1;
   public double April2DPipeline = 0;
   public double April3DPipeline = 9;
@@ -31,8 +34,6 @@ public class Limelight extends SubsystemBase {
   public double rightShelf = 8;
   public static double[] targetRelativePosition;
   public double[] robotRelativePosition;
-
-  public static double currentPipeline;
 
 
   /** Creates a new Limelight. */

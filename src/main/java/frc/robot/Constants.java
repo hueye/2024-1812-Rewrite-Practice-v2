@@ -71,7 +71,7 @@ public final class Constants {
   }
   
   public static final class NeoMotorConstants {
-      public static final double NEO_FREE_SPEED = 5676;
+      public static final double VORTEX_FREE_SPEED = 6784;
     }
   
     public static final class ModuleConstants{
@@ -81,7 +81,7 @@ public final class Constants {
       public static final boolean TURN_ENCODER_INVERTED = true;
   
   //Calculations for drive motor conversion factors and feed forwards
-      public static final double DRIVE_MOTOR_FREE_SPEED_RPS = NeoMotorConstants.NEO_FREE_SPEED / 60;
+      public static final double DRIVE_MOTOR_FREE_SPEED_RPS = NeoMotorConstants.VORTEX_FREE_SPEED / 60;
       public static final double WHEEL_DIAMETER_METERS = Units.inchesToMeters(2.85);
       public static final double WHEEL_CIRCUMFRENCE_METERS = WHEEL_DIAMETER_METERS * Math.PI;
       public static final double DRIVE_MOTOR_REDUCTION = (45.0 * 22) / (DRIVE_MOTOR_TEETH * 15);

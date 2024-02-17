@@ -10,7 +10,6 @@ import frc.robot.Constants.ArmConstants;
 import frc.robot.commands.Arm.ArmUpCMD;
 import frc.robot.commands.Wrist.WristPlaceHighCMD;
 import frc.robot.subsystems.Arm;
-import frc.robot.subsystems.Claw;
 import frc.robot.subsystems.Wrist;
 
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
@@ -19,12 +18,10 @@ import frc.robot.subsystems.Wrist;
 public class PlaceHigh extends SequentialCommandGroup {
   Wrist wrist;
   Arm arm;
-  Claw claw;
   /** Creates a new PlaceHigh. */
-  public PlaceHigh(Wrist wrist, Arm arm, Claw claw) {
+  public PlaceHigh(Wrist wrist, Arm arm) {
     this.wrist = wrist;
     this.arm = arm;
-    this.claw = claw;
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(

@@ -12,6 +12,7 @@ import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.SparkAbsoluteEncoder.Type;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.WristConstants;
 
@@ -25,12 +26,15 @@ public class Wrist extends SubsystemBase {
   /** Creates a new Wrist. */
   public Wrist() {
     wristMotor = new CANSparkMax(WristConstants.wristMotorID, MotorType.kBrushless);
+    
     wristMotor.restoreFactoryDefaults();
     wristMotor.setIdleMode(IdleMode.kBrake);
+    wristMotor.setSmartCurrentLimit(40);
 
     wristEncoder = wristMotor.getAbsoluteEncoder(Type.kDutyCycle);
     wristEncoder.setInverted(true);
-    wristEncoder.setPositionConversionFactor(WristConstants.wristAngleAllowance);
+    wristEncoder.setPositionConversionFactor(360);
+    wristEncoder.setVelocityConversionFactor(wristEncoder.getPositionConversionFactor() / 60.0);
    
     controller = wristMotor.getPIDController();
     controller.setFeedbackDevice(wristEncoder);
@@ -54,7 +58,7 @@ public class Wrist extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    SmartDashboard.putNumber("wrist angle", wristEncoder.getPosition());
   }
 
 

@@ -64,9 +64,9 @@ public class RobotContainer {
     opController.b().whileTrue(new ToggleClawCMD(clawSub));
     opController.a().whileTrue(new ToggleArmCMD(armSub));
 
-    opController.povDown().whileTrue(new PlaceLow(wristSub, armSub, clawSub));
-    opController.povCenter().whileTrue(new PlaceMid(wristSub, armSub, clawSub));
-    opController.povUp().whileTrue(new PlaceHigh(wristSub, armSub, clawSub));
+    opController.povDown().whileTrue(new PlaceLow(wristSub, armSub));
+    opController.povCenter().whileTrue(new PlaceMid(wristSub, armSub));
+    opController.povUp().whileTrue(new PlaceHigh(wristSub, armSub));
 
   }
 
