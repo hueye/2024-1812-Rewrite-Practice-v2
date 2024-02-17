@@ -92,7 +92,7 @@ public class Limelight extends SubsystemBase {
     });
   }
 
-  public Command setrightShelfPipeline() {
+  public Command setRightShelfPipeline() {
     
     return runOnce( () -> {table.getEntry("led status").setDouble(rightShelf);
     currentPipeline = rightShelf;

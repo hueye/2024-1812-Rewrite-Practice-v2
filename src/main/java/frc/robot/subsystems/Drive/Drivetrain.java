@@ -140,6 +140,28 @@ public class Drivetrain extends SubsystemBase {
     return pigeon.getRoll(); 
   }
 
+  public void levelSet(double speed) {
+    frontLeft.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(0)));
+    frontRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(0)));
+    backLeft.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(0)));
+    backRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(0)));
+  }
 
+  public double getTurnRate() {
+    return pigeon.getRate() * (DriveConstants.GYRO_REVERSED ? -1.0 : 1.0);
+  }
 
+  public void turnRobot(double speed) {
+    frontLeft.setDesiredState(new SwerveModuleState(-speed, Rotation2d.fromDegrees(-45)));
+    frontRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(45)));
+    backLeft.setDesiredState(new SwerveModuleState(-speed, Rotation2d.fromDegrees(-45)));
+    backRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(45)));
+  }
+
+  public void translateRobot(double speed) {
+    frontLeft.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(90)));
+    frontRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(90)));
+    backLeft.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(90)));
+    backRight.setDesiredState(new SwerveModuleState(speed, Rotation2d.fromDegrees(90)));
+  }
 }
