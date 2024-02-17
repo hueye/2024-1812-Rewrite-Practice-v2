@@ -33,6 +33,7 @@ public class Wrist extends SubsystemBase {
     wristEncoder.setPositionConversionFactor(WristConstants.wristAngleAllowance);
    
     controller = wristMotor.getPIDController();
+    controller.setFeedbackDevice(wristEncoder);
     controller.setP(WristConstants.wristP);
     controller.setI(WristConstants.wristI);
     controller.setD(WristConstants.wristD);

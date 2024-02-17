@@ -23,7 +23,6 @@ public class Arm extends SubsystemBase {
 
   public void armSet(Value value) {
     armPiston.set(value);
-    armPiston.get();
   }
 
   public Value armGet() {
